@@ -47,7 +47,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
                 className="w-full h-full preserve-3d relative transition-shadow duration-300"
             >
                 {/* Front Side */}
-                <div className="absolute inset-0 glass-card rounded-2xl p-6 backface-hidden flex flex-col border-white/20">
+                <div className="!absolute inset-0 glass-card rounded-2xl p-6 backface-hidden flex flex-col border-white/20">
                     <div className="flex justify-between items-start mb-4">
                         <span className="text-2xl font-bold text-white/40">{project.suit}</span>
                         <span className="text-xs font-bold tracking-widest text-indigo-400 uppercase">Project {project.id}</span>
@@ -70,7 +70,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
                 </div>
 
                 {/* Back Side */}
-                <div className="absolute inset-0 glass-card rounded-2xl overflow-hidden backface-hidden flex flex-col [transform:rotateY(180deg)] border-white/20">
+                <div className="!absolute inset-0 glass-card rounded-2xl overflow-hidden backface-hidden flex flex-col [transform:rotateY(180deg)] border-white/20">
                     {/* MacBook Frame Container */}
                     <div className="p-4 pt-6 bg-black/40 border-b border-white/5">
                         <div className="relative aspect-video w-full max-w-[240px] mx-auto group/browser">
