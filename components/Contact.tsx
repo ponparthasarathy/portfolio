@@ -68,7 +68,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-32 relative overflow-hidden">
+        <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-5xl mx-auto glass-card rounded-2xl overflow-hidden flex flex-col border-white/10 shadow-3xl bg-black/40 backdrop-blur-xl">
                     {/* Terminal Header */}
@@ -81,17 +81,17 @@ const Contact = () => {
                         <span className="text-[10px] font-mono text-white/40 ml-4">ponparthasarathy@terminal ~ contact.sh</span>
                     </div>
 
-                    <div className="p-10 md:p-16 flex flex-col md:flex-row gap-16">
+                    <div className="p-6 sm:p-10 md:p-16 flex flex-col md:flex-row gap-10 md:gap-16">
                         <div className="flex-1 space-y-8">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                                    Let's <span className="text-indigo-400">connect</span>()
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                                    Let's <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">connect</span>()
                                 </h2>
-                                <p className="text-sm text-slate-400 leading-relaxed max-w-md font-mono">
+                                <p className="text-sm text-slate-500 leading-relaxed max-w-md font-mono">
                                     // I'm always open to new opportunities, collaborations, or just a quick chat about technology.
                                 </p>
                             </motion.div>
@@ -100,7 +100,7 @@ const Contact = () => {
                                 <div className="space-y-1">
                                     <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest">Email</span>
                                     <MagneticWrapper>
-                                        <a href={`mailto:${socialLinks.email}`} className="block text-xl font-mono text-slate-400 hover:text-white transition-colors break-all">
+                                        <a href={`mailto:${socialLinks.email}`} className="block text-base md:text-xl font-mono text-slate-400 hover:text-white transition-colors break-all">
                                             {socialLinks.email}
                                         </a>
                                     </MagneticWrapper>
@@ -137,7 +137,7 @@ const Contact = () => {
                                             type="text"
                                             name="from_name"
                                             required
-                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-500/50 transition-all font-mono"
+                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-400/70 transition-all font-mono placeholder-white/20"
                                             placeholder="Enter your name..."
                                         />
                                     </div>
@@ -149,7 +149,7 @@ const Contact = () => {
                                             type="email"
                                             name="from_email"
                                             required
-                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-500/50 transition-all font-mono"
+                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-400/70 transition-all font-mono placeholder-white/20"
                                             placeholder="Enter your email..."
                                         />
                                     </div>
@@ -161,7 +161,7 @@ const Contact = () => {
                                             rows={3}
                                             name="message"
                                             required
-                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-500/50 transition-all font-mono resize-none"
+                                            className="w-full bg-transparent border-b border-white/10 py-2 text-white focus:outline-none focus:border-indigo-400/70 transition-all font-mono resize-none placeholder-white/20"
                                             placeholder="Tell me about your project..."
                                         />
                                     </div>
@@ -171,11 +171,11 @@ const Contact = () => {
                                     <motion.button
                                         type="submit"
                                         disabled={status === "sending"}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
+                                        whileHover={{ scale: 1.03 }}
+                                        whileTap={{ scale: 0.97 }}
                                         className={`px-10 py-4 font-mono text-sm rounded-lg transition-all border ${status === "sending"
                                             ? "bg-white/5 border-white/10 text-white/40 cursor-not-allowed"
-                                            : "bg-indigo-600/10 border-indigo-500/30 hover:bg-indigo-600/20 text-indigo-400"
+                                            : "bg-indigo-600/10 border-indigo-500/30 hover:bg-indigo-600/25 hover:border-indigo-400/50 text-indigo-400 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)]"
                                             }`}
                                     >
                                         {status === "sending" ? "sending..." : "send_message()"}

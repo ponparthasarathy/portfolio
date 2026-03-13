@@ -83,16 +83,16 @@ const SkillsOrbit = () => {
 
     return (
         <section id="skills" className="py-24 md:py-32 relative overflow-hidden min-h-[700px] md:min-h-[900px] flex flex-col items-center justify-center">
-            <div className="container mx-auto px-6 relative z-10 text-center mb-12 md:mb-16">
+            <div className="container mx-auto px-6 relative z-10 text-center mb-16 md:mb-20">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6"
+                    className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-indigo-200"
                 >
                     Technology Constellation
                 </motion.h2>
-                <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+                <p className="text-slate-500 max-w-2xl mx-auto text-sm">
                     Explore my technical expertise across the development spectrum.
                 </p>
             </div>
@@ -101,6 +101,8 @@ const SkillsOrbit = () => {
                 {/* Center Label */}
                 <MagneticWrapper>
                     <div className="relative z-20 w-24 h-24 md:w-32 md:h-32 !rounded-full glass-card flex items-center justify-center flex-col border-indigo-500/20">
+                        {/* Center glow */}
+                        <div className="absolute inset-0 rounded-full bg-indigo-500/5 blur-xl" />
                         <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-indigo-400 font-bold mb-1">Stack</span>
                         <span className="text-base md:text-xl font-bold text-white">Skills</span>
                     </div>
@@ -113,11 +115,8 @@ const SkillsOrbit = () => {
                         <React.Fragment key={category.category}>
                             {/* Orbit Ring */}
                             <div
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.05]"
-                                style={{
-                                    width: radius * 2,
-                                    height: radius * 2,
-                                }}
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.08]"
+                                style={{ width: radius * 2, height: radius * 2 }}
                             />
                             {category.items.map((skill, skillIdx) => (
                                 <SkillIcon
